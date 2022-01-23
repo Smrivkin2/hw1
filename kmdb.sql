@@ -65,6 +65,7 @@
 -- Turns column mode on but headers off
 .mode column
 .headers off
+.width 20 20 20 20
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -130,7 +131,7 @@ VALUES (
     'The Dark Night',
     '2008',
     'PG-13',
-    2,
+    1,
     2
 );
 
@@ -145,7 +146,7 @@ VALUES (
     'The Dark Night Rises',
     '2012',
     'PG-13',
-    3,
+    1,
     3
 );
 
@@ -161,7 +162,29 @@ INSERT INTO actors (
 VALUES (
     'Christian Bale',
     'Bruce Wayne',
-    '1''2''3'
+    '1'
+);
+
+INSERT INTO actors (
+    actor_name,
+    role_name,
+    movie_id
+)
+VALUES (
+    'Christian Bale',
+    'Bruce Wayne',
+    '2'
+);
+
+INSERT INTO actors (
+    actor_name,
+    role_name,
+    movie_id
+)
+VALUES (
+    'Christian Bale',
+    'Bruce Wayne',
+    '3'
 );
 
 INSERT INTO actors (
@@ -172,7 +195,7 @@ INSERT INTO actors (
 VALUES (
     'Michael Caine',
     'Alfred',
-    '1''2'
+    '1'
 );
 
 INSERT INTO actors (
@@ -182,7 +205,7 @@ INSERT INTO actors (
 )
 VALUES (
     'Liam Neeson',
-    'Ras Al Ghul',
+    'Ra`s Al Ghul',
     '1'
 );
 
@@ -205,7 +228,18 @@ INSERT INTO actors (
 VALUES (
     'Gary Oldman',
     'Commissioner Gordon',
-    '1''3'
+    '1'
+);
+
+INSERT INTO actors (
+    actor_name,
+    role_name,
+    movie_id
+)
+VALUES (
+    'Gary Oldman',
+    'Commissioner Gordon',
+    '3'
 );
 
 INSERT INTO actors (
@@ -227,6 +261,17 @@ INSERT INTO actors (
 VALUES (
     'Aaron Eckhart',
     'Harvey Dent',
+    '2'
+);
+
+INSERT INTO actors (
+    actor_name,
+    role_name,
+    movie_id
+)
+VALUES (
+    'Michael Caine',
+    'Alfred',
     '2'
 );
 
@@ -295,7 +340,8 @@ VALUES (
 -- The SQL statement for the movies output
 -- TODO!
 
-
+SELECT movies.movie_title, movies.year_released, movies.MPAA_rating, directors.director_name
+FROM movies INNER JOIN directors ON directors.id = movies.director_id;
 
 -- Prints a header for the cast output
 .print ""
@@ -306,7 +352,6 @@ VALUES (
 -- The SQL statement for the cast output
 -- TODO!
 
-
-
-
-
+SELECT movies.movie_title, actors.actor_name, actors.role_name
+FROM movies INNER JOIN actors ON actors.movie_id = movies.movie_id
+ORDER BY movies.movie_title
