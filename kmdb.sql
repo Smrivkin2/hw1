@@ -68,14 +68,14 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
-DROP TABLE IF EXISTS movie;
-DROP TABLE IF EXISTS director;
-DROP TABLE IF EXISTS actor;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS directors;
 
 -- Create new tables, according to your domain model
 -- TODO!
 
-CREATE TABLE movie (
+CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_title TEXT,
     year_released TEXT,
@@ -84,14 +84,14 @@ CREATE TABLE movie (
     actor_id INTEGER,
 );
 
-CREATE TABLE Top_Cast (
+CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     actor_name TEXT,
     role_name TEXT,
     movie_id INTEGER,
 );
 
-CREATE TABLE Director (
+CREATE TABLE directors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     director_name TEXT,
     movie_id INTEGER,
@@ -101,6 +101,191 @@ CREATE TABLE Director (
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+--------------------
+-- MOVIES data
+--------------------
+INSERT INTO movies (
+    movie_title,
+    year_released,
+    MPAA_rating,
+    director_id,
+    movie_id
+)
+VALUES (
+    'Batman Begins',
+    '2005',
+    'PG-13',
+    1,
+    1
+);
+
+INSERT INTO movies (
+    movie_title,
+    year_released,
+    MPAA_rating,
+    director_id,
+    movie_id
+)
+VALUES (
+    'The Dark Night',
+    '2008',
+    'PG-13',
+    2,
+    2
+);
+
+INSERT INTO movies (
+    movie_title,
+    year_released,
+    MPAA_rating,
+    director_id,
+    movie_id
+)
+VALUES (
+    'The Dark Night Rises',
+    '2012',
+    'PG-13',
+    3,
+    3
+);
+
+-------------------
+-- ACTORS data
+-------------------
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Christian Bale',
+    'Bruce Wayne',
+    '1''2''3'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Michael Caine',
+    'Alfred',
+    '1''2'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Liam Neeson',
+    'Ras Al Ghul',
+    '1'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Katie Holmes'
+    'Rachel Dawes'
+    '1'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Gary Oldman'
+    'Commissioner Gordon'
+    '1''3'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Heath Ledger'
+    'Joker'
+    '2'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Aaron Eckhart'
+    'Harvey Dent'
+    '2'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Maggie Gyllenhaal'
+    'Rachel Dawes'
+    '2'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Tom Hardy'
+    'Bane'
+    '3'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Joseph Gordon-Levitt'
+    'John Blake'
+    '3'
+);
+
+INSERT INTO actors (
+    actor_name,
+    character_name,
+    movies_id
+)
+VALUES (
+    'Anne Hathaway'
+    'Selina Kyle'
+    '3'
+);
+
+
+-------------------
+-- DIRECTORS data
+-------------------
+INSERT INTO directors (
+    director_name,
+    movie_id
+)
+VALUES (
+    'Christopher Nolan',
+    '1''2''3'    
+);
 
 -- Prints a header for the movies output
 .print "Movies"
