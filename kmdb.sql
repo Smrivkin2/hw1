@@ -68,13 +68,39 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
+DROP TABLE IF EXISTS movie;
+DROP TABLE IF EXISTS director;
+DROP TABLE IF EXISTS actor;
 
 -- Create new tables, according to your domain model
 -- TODO!
 
+CREATE TABLE movie (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_title TEXT,
+    year_released TEXT,
+    MPAA_rating TEXT,
+    director_id INTEGER,
+    actor_id INTEGER,
+);
+
+CREATE TABLE Top_Cast (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_name TEXT,
+    role_name TEXT,
+    movie_id INTEGER,
+);
+
+CREATE TABLE Director (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    director_name TEXT,
+    movie_id INTEGER,
+);
+
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -90,6 +116,14 @@
 .print "========"
 .print ""
 
-
 -- The SQL statement for the cast output
 -- TODO!
+
+
+
+
+
+
+
+
+
