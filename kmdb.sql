@@ -76,25 +76,25 @@ DROP TABLE IF EXISTS directors;
 -- TODO!
 
 CREATE TABLE movies (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_title TEXT,
     year_released TEXT,
     MPAA_rating TEXT,
     director_id INTEGER,
-    actor_id INTEGER,
+    actor_id INTEGER
 );
 
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     actor_name TEXT,
     role_name TEXT,
-    movie_id INTEGER,
+    movie_id INTEGER
 );
 
 CREATE TABLE directors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     director_name TEXT,
-    movie_id INTEGER,
+    movie_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
@@ -155,8 +155,8 @@ VALUES (
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
     'Christian Bale',
@@ -166,8 +166,8 @@ VALUES (
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
     'Michael Caine',
@@ -177,8 +177,8 @@ VALUES (
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
     'Liam Neeson',
@@ -188,89 +188,89 @@ VALUES (
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Katie Holmes'
-    'Rachel Dawes'
+    'Katie Holmes',
+    'Rachel Dawes',
     '1'
 );
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Gary Oldman'
-    'Commissioner Gordon'
+    'Gary Oldman',
+    'Commissioner Gordon',
     '1''3'
 );
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Heath Ledger'
-    'Joker'
+    'Heath Ledger',
+    'Joker',
     '2'
 );
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Aaron Eckhart'
-    'Harvey Dent'
+    'Aaron Eckhart',
+    'Harvey Dent',
     '2'
 );
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Maggie Gyllenhaal'
-    'Rachel Dawes'
+    'Maggie Gyllenhaal',
+    'Rachel Dawes',
     '2'
 );
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Tom Hardy'
-    'Bane'
+    'Tom Hardy',
+    'Bane',
     '3'
 );
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Joseph Gordon-Levitt'
-    'John Blake'
+    'Joseph Gordon-Levitt',
+    'John Blake',
     '3'
 );
 
 INSERT INTO actors (
     actor_name,
-    character_name,
-    movies_id
+    role_name,
+    movie_id
 )
 VALUES (
-    'Anne Hathaway'
-    'Selina Kyle'
+    'Anne Hathaway',
+    'Selina Kyle',
     '3'
 );
 
@@ -295,6 +295,8 @@ VALUES (
 -- The SQL statement for the movies output
 -- TODO!
 
+
+
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
@@ -303,10 +305,6 @@ VALUES (
 
 -- The SQL statement for the cast output
 -- TODO!
-
-
-
-
 
 
 
